@@ -253,6 +253,7 @@ class WandBUltralyticsCallback:
                     model = trainer.model.module
                 else:
                     model = trainer.model
+
                 self.model = copy.deepcopy(model).eval().to(self.device)
                 self.predictor.setup_model(model=self.model, verbose=False)
                 if self.task == "pose":

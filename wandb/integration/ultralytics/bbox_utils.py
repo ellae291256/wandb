@@ -1,14 +1,14 @@
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 import torch
+import wandb
 from ultralytics.engine.results import Results
 from ultralytics.models.yolo.detect import DetectionPredictor
+
 try:
     from ultralytics.yolo.utils import ops
 except ModuleNotFoundError:
     from ultralytics.utils import ops
-
-import wandb
 
 
 def scale_bounding_box_to_original_image_shape(
